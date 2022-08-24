@@ -1,0 +1,18 @@
+.logout-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1rem;
+}
+
+.user-logout {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sign-out-link {
+  text-decoration: none;
+  margin-right: 0.5rem;
+  color: black;
+}

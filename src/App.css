@@ -18,6 +18,6 @@ body {
   min-height: 100vh;
 }
 
-main{
+main {
   min-height: calc(100vh - 145px);
 }
