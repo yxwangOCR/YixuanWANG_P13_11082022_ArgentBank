@@ -11,7 +11,6 @@ function Nav() {
         <img className="logo" alt="argent-bank-logo" src={logo} />
       </Link>
       <SignInLink />
-     
     </nav>
   );
 }

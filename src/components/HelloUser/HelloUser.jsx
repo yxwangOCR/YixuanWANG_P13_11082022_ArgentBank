@@ -3,11 +3,9 @@ import "./HelloUser.css";
 
 function HelloUser() {
   return (
-   
-      <div className="user-name">
-        Hello, <span>User</span>
-      </div>
-
+    <div className="user-name">
+      Hello, <span>User</span>
+    </div>
   );
 }
 export default HelloUser;

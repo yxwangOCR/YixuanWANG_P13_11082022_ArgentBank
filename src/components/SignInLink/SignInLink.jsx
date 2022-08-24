@@ -6,9 +6,9 @@ import "./SignInLink.css";
 
 function SignInLink() {
   return (
-    <div className="sign-in-container" >
+    <div className="sign-in-container">
       <FaSignInAlt />
-      <Link to="login" className="sign-in-link" >
+      <Link to="login" className="sign-in-link">
         Sign In
       </Link>
     </div>

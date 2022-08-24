@@ -1,0 +1,40 @@
+
+:root {
+  --primary : #00bc77;
+  --secondary:#12002b;
+}
+
+
+.btn {
+  width: 100%;
+  padding: 8px 20px;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn--primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn--medium{
+  padding: 8px 20px;
+  font-size: 0.8rem;
+}
+
+.btn--large{
+  padding: 12px 26px;
+  font-size: 1.2rem;
+}
+
+.btn--medium:hover, .btn--large:hover{
+  background: var(--secondary);
+  color: white;
+  transition: all 0.3s ease-out;
+}
