@@ -18,7 +18,7 @@ const Button=({
   const ButtonSize = SIZE.includes(buttonSize) ? buttonSize : SIZE[0];
   
   return (
-    <Link to="/" className="btn-link">
+    <Link to="/login" className="btn-link">
       <button className={`btn ${ButtonStyle} ${ButtonSize}`} onClick={onClick} type={type}>
         {children}
         </button>

@@ -22,8 +22,4 @@
   margin-bottom: 0.5rem;
 }
 
-@media (min-width: 920px) {
-  .features-container {
-    flex-direction: row;
-  }
-}
+

@@ -33,3 +33,28 @@
 .remember-wrapper label {
   margin-left: 0.25rem;
 }
+
+
+@media (max-width:425px) {
+  .login-content {
+    width: 200px;
+    padding: 1rem;
+  }
+  .sign-in-icon {
+    font-size: 2rem;
+  }
+  .login-content h1{
+    font-size: 0.8rem;
+  }
+  .input-login-wrapper label {
+    font-size: 0.7rem;
+  }
+  .input-login-wrapper input {
+    padding: 2px;
+    font-size: 0.7rem;
+    border: 1px solid rgb(176, 172, 172);
+  }
+  .remember-wrapper label {
+    font-size: 0.7rem;
+  }
+}
