@@ -1,8 +1,18 @@
-import React from 'react'
+import React from 'react';
+import "./Transaction.css";
 
-function Transaction() {
+function Transaction(props) {
   return (
-    <div>Transaction table</div>
+    <section className="account-container">
+    <div className="account-content">
+       <h3 className="account-title">{props.title}</h3>
+       <p className="account-amount">{'$' + props.amount}</p>
+       <p className="account-description">{props.description}</p>
+    </div>
+    <div className="account-content cta">
+       <button className="transaction-button">View transactions</button>
+    </div>
+ </section>
   )
 }
 
