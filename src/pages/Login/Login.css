@@ -1,4 +1,4 @@
 .login-page-container {
   padding: 3rem;
-  background-color: #12002b;
+  background-color: var(--secondary);
 }

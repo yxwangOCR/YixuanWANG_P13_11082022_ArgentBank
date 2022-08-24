@@ -1,8 +1,4 @@
 
-:root {
-  --primary : #00bc77;
-  --secondary:#12002b;
-}
 
 
 .btn {
@@ -22,6 +18,10 @@
   background-color: var(--primary);
   color: white;
 }
+.btn--secondary{
+  background-color: var(--secondary);
+  color: white;
+}
 
 .btn--medium{
   padding: 8px 20px;
@@ -34,7 +34,7 @@
 }
 
 .btn--medium:hover, .btn--large:hover{
-  background: var(--secondary);
+  background-color: black;
   color: white;
   transition: all 0.3s ease-out;
 }
