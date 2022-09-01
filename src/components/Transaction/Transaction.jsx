@@ -5,7 +5,7 @@ function Transaction(props) {
   return (
     <section className="account-container">
       <div className="account-content">
-        <h3 className="account-title">{props.title}</h3>
+        <h3 className="account-title">{props.bank}</h3>
         <p className="account-amount">{"$" + props.amount}</p>
         <p className="account-description">{props.description}</p>
       </div>

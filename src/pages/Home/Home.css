@@ -1,6 +1,5 @@
 @media (max-width: 750px) {
-    .features-container {
-       
-        flex-direction: column;
-      }
+  .features-container {
+    flex-direction: column;
+  }
 }

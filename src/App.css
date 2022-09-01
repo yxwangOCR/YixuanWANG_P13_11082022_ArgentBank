@@ -22,8 +22,7 @@ main {
   min-height: calc(100vh - 145px);
 }
 
-
 :root {
-  --primary : #00bc77;
-  --secondary:#12002b;
+  --primary: #00bc77;
+  --secondary: #12002b;
 }

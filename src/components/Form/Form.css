@@ -34,8 +34,20 @@
   margin-left: 0.25rem;
 }
 
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 
-@media (max-width:425px) {
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+@media (max-width: 425px) {
   .login-content {
     width: 200px;
     padding: 1rem;
@@ -43,7 +55,7 @@
   .sign-in-icon {
     font-size: 2rem;
   }
-  .login-content h1{
+  .login-content h1 {
     font-size: 0.8rem;
   }
   .input-login-wrapper label {
