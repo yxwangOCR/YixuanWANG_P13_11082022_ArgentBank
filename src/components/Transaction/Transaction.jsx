@@ -2,6 +2,8 @@ import React from "react";
 import "./Transaction.css";
 
 function Transaction(props) {
+
+
   return (
     <section className="account-container">
       <div className="account-content">

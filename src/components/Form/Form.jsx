@@ -23,7 +23,7 @@ const Form = () => {
 
   const dispatch = useDispatch();
 
- 
+
 
   useEffect(() => {
     setErrMsg("");
@@ -34,34 +34,38 @@ const Form = () => {
     //console.log(email, password);
 
     // Redux: 
-    dispatch (
-      logIn({
-        email: email,
-        password: password,
-      })
-    )
+
 
     // Axios: 
     try {
       const response = await axios.post(
-        LOGIN_URL,
-        JSON.stringify({ email, password }),
-        {
-          headers: {
-            "Content-type": "application/json",
-          },
-          withCredentials: false, // if it's true?
-        }
+          LOGIN_URL,
+          JSON.stringify({ email, password }),
+          {
+            headers: {
+              "Content-type": "application/json",
+            },
+            withCredentials: false, // if it's true?
+          }
       );
       console.log(JSON.stringify(response));
       console.log(JSON.stringify(response?.data?.body.token));
 
       const accessToken = response?.data?.body.token;
-     
+
       setAuth({email, password, accessToken})
       setEmail("");
       setPassword("");
       setSuccess(true);
+
+      dispatch (
+          logIn({
+            email: email,
+            password: password,
+            accessToken: accessToken,
+          })
+      )
+
     } catch (error) {
       if (!error.response){
         setErrMsg('No Server Response'); // not tested yet.
@@ -75,65 +79,65 @@ const Form = () => {
   console.log(email, password);
 
   return (
-    <>
-      {success ? (
-        <section>
-          <Profile/>
-          {Account.map((account)=>{
-            return ( 
-              < Transaction
-              key={account.id} 
-              bank = {account.bank}
-              amount = {account.amount}
-              description={account.description}
-              />
-            );
-          })}
-        </section>
-      ) : (
-        <section className="login-content">
-          <p className={errMsg ? "errmsg" : "offscreen"}>{errMsg}</p>
-          <FaUserCircle className="sign-in-icon" />
-          <h1>Sign In</h1>
-          <form className="login-form" onSubmit={handleSubmit}>
-            <div className="input-login-wrapper">
-              <label htmlFor="email">E-mail:</label>
-              <input
-                type="text"
-                id="email"
-                autoComplete="off"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="input-login-wrapper">
-              <label htmlFor="password">Password:</label>
-              <input
-                type="password"
-                id="password"
-                required
-                autoComplete="off"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            <div className="remember-wrapper">
-              <input type="checkbox" id="remember" />
-              <label htmlFor="remember">Remember me</label>
-            </div>
-            <Button type="submit" className="sign-in-btn">Sign In</Button>
-          </form>
-          <p>
-            Need an account?
-            <br />
-            <Link to="/" className="sign-up-message">
-              Sign Up
-            </Link>
-          </p>
-        </section>
-      )}
-    </>
+      <>
+        {success ? (
+            <section>
+              <Profile/>
+              {Account.map((account)=>{
+                return (
+                    < Transaction
+                        key={account.id}
+                        bank = {account.bank}
+                        amount = {account.amount}
+                        description={account.description}
+                    />
+                );
+              })}
+            </section>
+        ) : (
+            <section className="login-content">
+              <p className={errMsg ? "errmsg" : "offscreen"}>{errMsg}</p>
+              <FaUserCircle className="sign-in-icon" />
+              <h1>Sign In</h1>
+              <form className="login-form" onSubmit={handleSubmit}>
+                <div className="input-login-wrapper">
+                  <label htmlFor="email">E-mail:</label>
+                  <input
+                      type="text"
+                      id="email"
+                      autoComplete="off"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="input-login-wrapper">
+                  <label htmlFor="password">Password:</label>
+                  <input
+                      type="password"
+                      id="password"
+                      required
+                      autoComplete="off"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+                <div className="remember-wrapper">
+                  <input type="checkbox" id="remember" />
+                  <label htmlFor="remember">Remember me</label>
+                </div>
+                <Button type="submit" className="sign-in-btn">Sign In</Button>
+              </form>
+              <p>
+                Need an account?
+                <br />
+                <Link to="/" className="sign-up-message">
+                  Sign Up
+                </Link>
+              </p>
+            </section>
+        )}
+      </>
   );
 };
 export default Form;

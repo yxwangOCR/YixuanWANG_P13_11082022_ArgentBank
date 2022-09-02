@@ -9,6 +9,8 @@ import { selectUser } from "../../app/authSlice";
 
 const Nav = () => {
   const user = useSelector(selectUser)
+
+    console.log(user)
   return (
     <nav className="nav-container">
       <Link to="/">
