@@ -7,16 +7,16 @@ import { logOut, selectUser } from "../../app/authSlice";
 import { useSelector } from "react-redux";
 
 const SignOutLink = () => {
-const user = useSelector(selectUser)
+  const firstName = useSelector((state) => state.auth.firstName);
   const dispatch = useDispatch();
-  const handleLogOut = (e) =>{
+  const handleLogOut = async (e) =>{
     e.preventDefault(); 
     dispatch(logOut());
   }
 
   return (
     <div className="sign-out-container">
-      Hello, {user.firstName}
+      Hello, {firstName}
       <FaSignOutAlt />
       <Link to="/" className="sign-out-link" onClick={handleLogOut}>
         Sign Out

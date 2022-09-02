@@ -14,7 +14,9 @@ const Nav = () => {
       <Link to="/">
         <img className="logo" alt="argent-bank-logo" src={logo} />
       </Link>
+    
       {user ? <SignOutLink/> : <SignInLink/>}  
+      {/* Consider adding an error boundary to your tree to customize error handling behavior.*/}
     </nav>
   );
 }
