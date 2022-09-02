@@ -2,20 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
 import SignInLink from "../SignInLink/SignInLink";
-//import SignOutLink from "../SignOutLink/SignOutLink";
+import SignOutLink from "../SignOutLink/SignOutLink";
 import "./Nav.css";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../app/authSlice";
 
-function Nav() {
- 
+const Nav = () => {
+  const user = useSelector(selectUser)
   return (
     <nav className="nav-container">
       <Link to="/">
         <img className="logo" alt="argent-bank-logo" src={logo} />
       </Link>
-      <SignInLink/>
-
-      {/*{success ? <SignOutLink/> : <SignInLink />}*/}
-      
+      {user ? <SignOutLink/> : <SignInLink/>}  
     </nav>
   );
 }

@@ -8,6 +8,8 @@ import "./Form.css";
 import axios from "../../app/axios";
 import AuthContext from "../../app/AuthProvider";
 import Account from "../../data/account.json"
+import { useDispatch } from "react-redux";
+import { logIn } from "../../app/authSlice"
 
 const LOGIN_URL = "/user/login";
 
@@ -18,6 +20,11 @@ const Form = () => {
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
 
+
+  const dispatch = useDispatch();
+
+ 
+
   useEffect(() => {
     setErrMsg("");
   }, [email, password]);
@@ -26,6 +33,15 @@ const Form = () => {
     e.preventDefault(); // reload page
     //console.log(email, password);
 
+    // Redux: 
+    dispatch (
+      logIn({
+        email: email,
+        password: password,
+      })
+    )
+
+    // Axios: 
     try {
       const response = await axios.post(
         LOGIN_URL,
@@ -48,11 +64,11 @@ const Form = () => {
       setSuccess(true);
     } catch (error) {
       if (!error.response){
-        setErrMsg('No Server Response');
+        setErrMsg('No Server Response'); // not tested yet.
       } else if (error.response?.status === 400){
-        setErrMsg('Wrong Email or Password')
+        setErrMsg('Wrong Email or Password') // tested: ok
       }else{
-        setErrMsg('Login Failed');
+        setErrMsg('Login Failed'); // tested : ok
       }
     }
   };
@@ -106,7 +122,7 @@ const Form = () => {
               <input type="checkbox" id="remember" />
               <label htmlFor="remember">Remember me</label>
             </div>
-            <Button className="sign-in-btn">Sign In</Button>
+            <Button type="submit" className="sign-in-btn">Sign In</Button>
           </form>
           <p>
             Need an account?
