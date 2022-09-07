@@ -39,7 +39,7 @@ function Profile() {
   };
 
   // Post: get user profile by token when login
-  /*
+
   const useProfile = (token) => {
     useEffect(() => {
       const postRequest = async (e) => {
@@ -57,9 +57,10 @@ function Profile() {
       };
     }, [token]);
   };
-*/
+
   // Put:
   const onUpdate = async () => {
+    editMode();
     const userInput = {
       firstName: update.firstName,
       lastName: update.lastName,
