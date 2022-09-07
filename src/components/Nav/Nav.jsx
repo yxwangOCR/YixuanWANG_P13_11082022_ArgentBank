@@ -8,18 +8,17 @@ import { useSelector } from "react-redux";
 import { selectUser } from "../../app/authSlice";
 
 const Nav = () => {
-  const user = useSelector(selectUser)
+  const user = useSelector(selectUser);
 
-    console.log(user)
+  console.log(user);
   return (
     <nav className="nav-container">
       <Link to="/">
         <img className="logo" alt="argent-bank-logo" src={logo} />
       </Link>
-    
-      {user ? <SignOutLink/> : <SignInLink/>}  
-      {/* Consider adding an error boundary to your tree to customize error handling behavior.*/}
+
+      {user ? <SignOutLink /> : <SignInLink />}
     </nav>
   );
-}
+};
 export default Nav;

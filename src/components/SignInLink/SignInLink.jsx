@@ -3,12 +3,11 @@ import { FaSignInAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./SignInLink.css";
 
-function SignInLink () {
-  
+function SignInLink() {
   return (
     <div className="sign-in-container">
       <FaSignInAlt />
-      <Link to="login" className="sign-in-link">
+      <Link to="/login" className="sign-in-link">
         Sign In
       </Link>
     </div>

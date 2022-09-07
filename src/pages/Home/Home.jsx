@@ -1,21 +1,21 @@
 import React from "react";
 import Hero from "../../components/Hero/Hero";
 import Features from "../../components/Features/Features";
-import Data from "../../data/data";
+import Contents from "../../data/contents";
 import "./Home.css";
 
 function Home() {
   return (
-    <main className="main-container">
+    <main className="home-page-container">
       <Hero />
       <div className="features-container">
-        {Data.map((data) => {
+        {Contents.map((content) => {
           return (
             <Features
-              key={data.id}
-              icon={data.icon}
-              title={data.title}
-              content={data.content}
+              key={content.id}
+              icon={content.icon}
+              title={content.title}
+              content={content.content}
             />
           );
         })}

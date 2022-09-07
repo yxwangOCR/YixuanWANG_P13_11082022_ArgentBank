@@ -1,0 +1,36 @@
+.sign-up-page-container{
+    padding: 3rem;
+    max-width: 500px;
+    margin: 0 auto;
+    flex: 0 0 auto;
+    padding-right: 12px;
+    padding-left: 12px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 2rem;
+   
+}
+
+.sign-up-page-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem
+}
+
+.sign-up-page-container h1{
+    font-size: 48px;
+    line-height: 60px; 
+}
+
+.sign-up-page-container input{
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    height: 48px;
+    border: 1.8px solid #adadad;
+    border-radius: 8px;
+    padding: 0 0 16px;
+    font-weight: 300;
+    padding: 12px;
+}

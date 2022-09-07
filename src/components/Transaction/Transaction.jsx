@@ -1,9 +1,8 @@
 import React from "react";
 import "./Transaction.css";
+import Button from "../Button/Button";
 
 function Transaction(props) {
-
-
   return (
     <section className="account-container">
       <div className="account-content">
@@ -12,7 +11,7 @@ function Transaction(props) {
         <p className="account-description">{props.description}</p>
       </div>
       <div className="account-content cta">
-        <button className="transaction-button">View transactions</button>
+        <Button className="transaction-button">View transactions</Button>
       </div>
     </section>
   );

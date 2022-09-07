@@ -1,13 +1,12 @@
 .sign-out-container {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1rem;
-  }
-  
-  .sign-out-link {
-    text-decoration: none;
-    margin-right: 0.5rem;
-    color: black;
-  }
-  
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.sign-out-link {
+  text-decoration: none;
+  margin-right: 0.5rem;
+  color: black;
+}
