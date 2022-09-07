@@ -5,8 +5,7 @@ import {
   selectToken,
   selectFirstName,
   selectLastName,
-  getFirstName,
-  getLastName,
+  updateProfile,
 } from "../../app/authSlice";
 import TextInput from "../TextInput/TextInput";
 import Button from "../Button/Button";
@@ -21,6 +20,31 @@ function Profile() {
   //dispatch(logIn());
 
   const accessToken = useSelector(selectToken);
+
+  const getProfile = async ()  => {
+    const response = await axios.get(
+        PROFILE_URL,
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+    );
+
+    const data = response?.data?.body;
+
+    dispatch(
+        updateProfile({
+          ...data
+        })
+    )
+  }
+
+  useEffect(() => {
+    getProfile()
+  }, [])
+
+
 
   const [edit, setEdit] = useState(false);
   const editMode = () => setEdit(!edit);
@@ -49,8 +73,7 @@ function Profile() {
               Authorization: `Bearer ${accessToken}`,
             },
           });
-          dispatch(getFirstName(postRequest.firstName));
-          dispatch(getLastName(postRequest.lastName));
+
         } catch (error) {
           console.log("Post error");
         }
@@ -60,7 +83,6 @@ function Profile() {
 
   // Put:
   const onUpdate = async () => {
-    editMode();
     const userInput = {
       firstName: update.firstName,
       lastName: update.lastName,
@@ -68,45 +90,58 @@ function Profile() {
 
     try {
       const response = await axios.put(
-        PROFILE_URL,
-        {
-          firstName: "Test",
-          lastName: "TEST",
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
+          PROFILE_URL,
+          update,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          }
       );
+
+      const data = response?.data?.body;
+
+      dispatch(
+          updateProfile({
+            ...data
+          })
+      );
+
+
     } catch (error) {
       console.log("onUpdate Error");
     }
     console.log("update profile");
   };
 
+
+  console.log(edit)
   return (
-    <div className="profile-container">
-      <div className="sayHi">
-        Welcome Back User : {firstName} {lastName}
-      </div>
-      {editMode ? (
-        <div className="edit-name-input">
-          <TextInput
-            inputProps={{ type: "text", placeholder: "Firstname" }}
-            onChange={handleUpdateProfile}
-            id="firstName"
-          />
-          <TextInput
-            inputProps={{ type: "text", placeholder: "Lastname" }}
-            onChange={handleUpdateProfile}
-            id="lastName"
-          />
+      <div className="profile-container">
+        <div className="sayHi">
+          Welcome Back User : {firstName} {lastName}
         </div>
-      ) : null}
-      <Button>Cancle</Button>
-      <Button onClick={onUpdate}>Update profile</Button>
-    </div>
+
+
+        {edit ? (
+            <div className="edit-name-input">
+              <TextInput
+                  inputProps={{ type: "text", placeholder: "Firstname" }}
+                  onChange={handleUpdateProfile}
+                  id="firstName"
+              />
+              <TextInput
+                  inputProps={{ type: "text", placeholder: "Lastname" }}
+                  onChange={handleUpdateProfile}
+                  id="lastName"
+              />
+              <Button onClick={editMode}>Cancel</Button>
+              <Button onClick={onUpdate}>Update profile</Button>
+            </div>
+        ) : <Button onClick={editMode}>Edit</Button>
+        }
+
+      </div>
   );
 }
 
