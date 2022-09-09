@@ -82,8 +82,8 @@ const Form = () => {
               type: "text",
               id: "email",
               autoComplete: "off",
-              required: "true",
             }}
+            required={true}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -94,9 +94,9 @@ const Form = () => {
             inputProps={{
               type: "password",
               id: "password",
-              required: "true",
               autoComplete: "off",
             }}
+            required={true}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
