@@ -1,0 +1,26 @@
+.detail-list{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    font-size: 1.2rem;
+}
+
+
+
+.detail-list-content{
+    display: grid;
+    grid-template-columns: 5fr 5fr 5fr 5fr 5fr;
+    font-weight: bold;
+    padding: 0;
+    place-items: center;
+   
+}
+
+.detail-list-content button{
+    margin-top: 0
+}
+
+.arrow-down, .arrow-up{
+    width: 2rem;
+    height: 2rem;
+}

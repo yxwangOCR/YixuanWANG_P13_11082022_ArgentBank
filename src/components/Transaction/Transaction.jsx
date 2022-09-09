@@ -1,8 +1,15 @@
 import React from "react";
 import "./Transaction.css";
 import Button from "../Button/Button";
+import { useNavigate } from "react-router-dom";
 
 function Transaction(props) {
+  const navigate = useNavigate();
+
+  const getTransaction = () => {
+    console.log("getTransaction");
+    navigate("/transaction");
+  };
   return (
     <section className="account-container">
       <div className="account-content">
@@ -11,7 +18,9 @@ function Transaction(props) {
         <p className="account-description">{props.description}</p>
       </div>
       <div className="account-content cta">
-        <Button className="transaction-button">View transactions</Button>
+        <Button className="transaction-button" onClick={getTransaction}>
+          View transactions
+        </Button>
       </div>
     </section>
   );

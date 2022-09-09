@@ -1,0 +1,6 @@
+.profile-page-container{
+  padding: 3rem;
+  background-color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+}

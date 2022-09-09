@@ -11,8 +11,27 @@
     color: aliceblue;
     font-size: 2rem;
 }
-.edit-name-input{
+.edit-name{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 1rem;
     gap: 1rem;
+    padding: 1rem;
+}
+
+.edit-name-input{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.edit-name-input input{
+    padding: 5px 20px;
+    border: 1px solid aliceblue;
+    border-radius: 8px;
+}
+
+.edit-name-button button{
+    margin: 0 1rem;
 }
