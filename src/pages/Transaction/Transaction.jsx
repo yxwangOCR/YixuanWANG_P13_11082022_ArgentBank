@@ -35,6 +35,8 @@ function Transaction() {
               description={detail.description}
               amount={detail.amount}
               balance={detail.balance}
+              type={detail.type}
+              category={detail.category}
             />
           );
         })}
