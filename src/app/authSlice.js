@@ -18,6 +18,7 @@ const authSlice = createSlice({
         },
         logOut: (state) => {
             state.email = null;
+            state.token = null;
         },
         updateProfile: (state,  action) => {
             state.firstName = action.payload.firstName;
