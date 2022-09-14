@@ -24,18 +24,11 @@ function Profile() {
   // GET :
   useEffect(() => {
     const getProfile = async () => {
-      const response = await axios.get(
-        PROFILE_URL,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
+      const response = await axios.get(PROFILE_URL, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
         },
-        {
-          firstName: "GET user firstname",
-          lastName: "GET user lastName",
-        }
-      );
+      });
       const data = response?.data?.body;
       console.log(data);
       console.log(response);
@@ -86,13 +79,6 @@ function Profile() {
 
   const handleUpdateTextInput = (e) => {
     e.preventDefault();
-    /* BEFORE : 
-    setUpdate({
-      firstName: e.target.value,
-      lastName: e.target.value,
-    });
-    */
-    // NOW : Spread
     const Input = e.target.id;
     setUpdate({
       ...update,
@@ -114,6 +100,7 @@ function Profile() {
                 type: "text",
                 placeholder: "Firstname",
                 id: "firstName",
+                autoComplete: "off",
               }}
               onChange={handleUpdateTextInput}
             />
@@ -122,6 +109,7 @@ function Profile() {
                 type: "text",
                 placeholder: "Lastname",
                 id: "lastName",
+                autoComplete: "off",
               }}
               onChange={handleUpdateTextInput}
             />

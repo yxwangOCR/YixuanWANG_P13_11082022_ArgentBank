@@ -35,3 +35,15 @@
 .edit-name-button button{
     margin: 0 1rem;
 }
+@media (max-width: 500px){
+    .edit-name-input{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 350px){
+    .edit-name-button button{
+        margin-top: 1rem;
+        
+    }
+}

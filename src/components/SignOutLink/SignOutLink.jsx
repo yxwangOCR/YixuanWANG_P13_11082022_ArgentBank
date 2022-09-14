@@ -17,7 +17,6 @@ const SignOutLink = () => {
     dispatch(logOut());
     console.log("Logout success!");
     navigate("/");
-    alert("Logout success!");
   };
 
   return (

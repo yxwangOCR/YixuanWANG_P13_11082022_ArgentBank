@@ -46,16 +46,28 @@
   color: white;
 }
 
+
 @media (min-width: 720px) {
-  .account-wrapper {
+  
+  .account-container {
     flex-direction: row;
   }
-
   .account-content.cta {
     flex: 0;
   }
 
   .transaction-button {
     width: 200px;
+  }
+ 
+}
+
+@media (max-width: 720px){
+  .account-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .account-amount{
+    font-size: 2rem;
   }
 }
