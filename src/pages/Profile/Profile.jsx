@@ -10,8 +10,6 @@ import {Navigate} from "react-router-dom";
 function Profile() {
     const isLogged = !!useSelector(selectToken)
     console.log(isLogged)
-
-
     if(!isLogged) {
         console.log('ERRTFYGYUHIJK')
         return <Navigate to="/" replace />

@@ -53,7 +53,6 @@ const Form = () => {
       dispatch(
         logIn({
           email: email,
-          password: password,
           accessToken: accessToken,
         })
       );
@@ -85,8 +84,9 @@ const Form = () => {
             }}
             required={true}
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)} //as user change input, we get the value and put them into setEmail
           />
+          
         </div>
         <div className="input-login-wrapper">
           <TextInput

@@ -6,3 +6,6 @@ export const store = configureStore({
     auth: authReducer,
   },
 });
+
+
+// Create store : configureStore creates a redux data
