@@ -105,6 +105,12 @@ paths:
           required: true
           type: integer
           description: Transaction unique id
+        - in: body
+          name: body
+          description: Created transaction object 
+          required: true
+          schema:
+               $ref: '#/definitions/Transaction'
       responses:
         '200':
           description: Successfully created a transaction!
@@ -138,6 +144,12 @@ paths:
           required: true
           type: integer
           description: Transaction unique id
+        - in: body
+          name: body
+          description: Updated transaction object 
+          required: true
+          schema:
+               $ref: '#/definitions/Transaction'
       responses:
         '200':
           description: Successfully updated an user's specific transaction!
@@ -212,16 +224,16 @@ definitions:
             example: Argent Bank notification
           amount:
             type: integer
-            example: 5000
+            example: 200
           balance:
             type: integer
-            example: 2000
+            example: 5000
           type:
             type: string
-            example: Electronic
+            example: Electricity
           category:
             type: string
-            example: Food
+            example: Household
           notes:
             type: string
-            example: Voyage
+            example: Electricity bill for July 2022
