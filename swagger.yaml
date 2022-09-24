@@ -86,7 +86,7 @@ paths:
       security:
         - Bearer: []
       tags:
-        - Read, update and delete a transaction
+        - Read, update and delete an existent transaction
       summary: View the details of a specific transaction in another view.
       description: API for fetching an existent transaction in detail
       operationId: readUniqueTransaction
@@ -119,7 +119,7 @@ paths:
       security:
         - Bearer: []
       tags:
-        - Read, update and delete a transaction
+        - Read, update and delete an existent transaction
       summary: Edit a specific transaction information for un identified user.
       description: API for updating an existent transaction
       operationId: updateTransaction
@@ -158,7 +158,7 @@ paths:
       security:
         - Bearer: []
       tags:
-        - Read, update and delete a transaction
+        - Read, update and delete an existent transaction
       summary: Deletes a specific transaction information for un identified user.
       description: API for deleting an existent transaction
       operationId: deleteTransaction
