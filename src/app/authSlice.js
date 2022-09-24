@@ -36,7 +36,7 @@ export const selectToken = (state) => state.auth.token;
 export const selectFirstName = (state) => state.auth.firstName
 export const selectLastName = (state) => state.auth.lastName
 
-// Allowing to use useSelector Hook to connect function components to redux
+// Allowing to use useSelector Hook to connect function components to redux (to grab data from redux)
 
 /*
 Create a slice:
