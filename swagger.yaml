@@ -16,9 +16,9 @@ paths:
         - Bearer: []
       tags:
         - Transactions for current month
-      summary: View all user's transactions for the current month;
+      summary: An identified user can see all his transactions for the current month.
       description: >-
-        API for fetching the transactions in the current month for a specific
+        API for fetching the transactions in the current month for an identified
         user
       operationId: readAllTransaction
       parameters:
@@ -31,7 +31,7 @@ paths:
           name: userId
           required: true
           type: integer
-          description: a specific user's id
+          description: an identified user's id
         - in: path
           name: month
           required: true
@@ -46,15 +46,49 @@ paths:
           description: Invalid Fields
         '500':
           description: Internal Server Error
-  
+  /transaction/create/{userId}:
+    post:
+      security:
+        - Bearer: []
+      tags:
+        - Create a new transaction
+      summary: Add a new transaction information for an identified user.
+      description: API for adding a new transaction information for an identified user
+      operationId: createTransaction
+      parameters:
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token
+          type: string
+          required: true
+        - in: path
+          name: userId
+          required: true
+          type: integer
+          description: a specific user's id
+        - in: body
+          name: body
+          description: Created transaction object 
+          required: true
+          schema:
+               $ref: '#/definitions/Transaction'
+      responses:
+        '200':
+          description: Successfully created a transaction!
+          schema:
+            $ref: '#/definitions/Transaction'
+        '400':
+          description: Invalid Fields
+        '500':
+          description: Internal Server Error
   /transaction/operation/{userId}/{transactionId}:
     get:
       security:
         - Bearer: []
       tags:
-        - CRUD with transactions
-      summary: View the details of a specific transaction in another view
-      description: API for fetching a transaction in detail of a specific user
+        - Read, update and delete a transaction
+      summary: View the details of a specific transaction in another view.
+      description: API for fetching an existent transaction in detail
       operationId: readUniqueTransaction
       parameters:
         - in: header
@@ -81,51 +115,12 @@ paths:
           description: Invalid Fields
         '500':
           description: Internal Server Error
-    post:
-      security:
-        - Bearer: []
-      tags:
-        - CRUD with transactions
-      summary: Add a transaction information
-      description: API for adding a new transaction information
-      operationId: createTransaction
-      parameters:
-        - in: header
-          name: Authorization
-          description: Attach Bearer JWT token
-          type: string
-          required: true
-        - in: path
-          name: userId
-          required: true
-          type: integer
-          description: a specific user's id
-        - in: path
-          name: transactionId
-          required: true
-          type: integer
-          description: Transaction unique id
-        - in: body
-          name: body
-          description: Created transaction object 
-          required: true
-          schema:
-               $ref: '#/definitions/Transaction'
-      responses:
-        '200':
-          description: Successfully created a transaction!
-          schema:
-            $ref: '#/definitions/Transaction'
-        '400':
-          description: Invalid Fields
-        '500':
-          description: Internal Server Error
     put:
       security:
         - Bearer: []
       tags:
-        - CRUD with transactions
-      summary: Edit a specific transaction information
+        - Read, update and delete a transaction
+      summary: Edit a specific transaction information for un identified user.
       description: API for updating an existent transaction
       operationId: updateTransaction
       parameters:
@@ -163,8 +158,8 @@ paths:
       security:
         - Bearer: []
       tags:
-        - CRUD with transactions
-      summary: Deletes a specific transaction information
+        - Read, update and delete a transaction
+      summary: Deletes a specific transaction information for un identified user.
       description: API for deleting an existent transaction
       operationId: deleteTransaction
       parameters:
