@@ -1,5 +1,4 @@
 # Project 13 OpenClassrooms - Use an API for a bank account with React
-
 Build a web application for customers of Argent Bank to log in as well as manage their accounts and profiles.
 
 [![React](https://img.shields.io/badge/React-v18.2.0-brightgreen)](https://fr.reactjs.org/) 
@@ -8,24 +7,19 @@ Build a web application for customers of Argent Bank to log in as well as manage
 [![Redux Toolkit](https://img.shields.io/badge/Redux%20Toolkit-v1.8.5-blueviolet)](https://redux-toolkit.js.org/)
 [![Axios](https://img.shields.io/badge/Axios-v0.27.2-ff69b4)](https://axios-http.com/docs/intro)
 ## Key Features
-
 - User can visit the home page
 - User can log in to the system
 - User can log out of the system
 - User can see their own profile information only after successful login
 - User can change the profile and keep the data in the database. 
 
-
 ![Logo](https://user.oc-static.com/upload/2020/08/14/1597410191519_image2.png)
 
-
 ## Demo
-![Demo1](https://github.com/yxwangOCR/YixuanWANG_P13_11082022_ArgentBank/blob/master/public/mockup/Project%2013%20Demo%20part%201.gif)
-
-
+![Demo1](https://github.com/yxwangOCR/YixuanWANG_P13_11082022_ArgentBank/blob/master/public/mockup/Project-13-Demo-Part-1.gif)
+![Demo2](https://github.com/yxwangOCR/YixuanWANG_P13_11082022_ArgentBank/blob/master/public/mockup/Project-13-Demo-Part-2.gif)
 
 ## API Reference
-
 #### 1. Backend
 - Clone the Backend on your computer:
 ```http
@@ -63,12 +57,9 @@ Build a web application for customers of Argent Bank to log in as well as manage
 - [Prettier](https://prettier.io/docs/en/install.html)
 - [Swagger Editor](https://swagger.io/tools/swagger-editor/)
 
-
 ## Lessons Learned
 
-What did you learn while building this project? What challenges did you face and how did you overcome them?
-
-
+In this project, I learned how to use Redux Toolkit and Swagger Editor.
 ## Acknowledgements
 
 Useful tutorials for building this project:
