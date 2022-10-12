@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # ArgentBank
 ### Dependencies
 
@@ -53,3 +54,5 @@ What did you learn while building this project? What challenges did you face and
 
 - Login System using Redux - Redux tutorial for Beginners: https://www.youtube.com/watch?v=mMzhWXr9ass&list=PLoS4Z9Rl1iEgeg_I7-iuyFc6GZG5SqgMi&index=2&t=1672s
 - React JWT Authentication App using RTK Query | RTK Query Auth | Redux-Toolkit | React TypeScript: https://www.youtube.com/watch?v=Icd-_K7KFrs&list=PLoS4Z9Rl1iEgeg_I7-iuyFc6GZG5SqgMi&index=5&t=30s
+=======
+>>>>>>> Stashed changes
