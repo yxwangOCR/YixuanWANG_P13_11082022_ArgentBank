@@ -7,5 +7,4 @@ export const store = configureStore({
   },
 });
 
-
 // Create store : configureStore creates a redux data

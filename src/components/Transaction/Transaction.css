@@ -46,9 +46,7 @@
   color: white;
 }
 
-
 @media (min-width: 720px) {
-  
   .account-container {
     flex-direction: row;
   }
@@ -59,15 +57,14 @@
   .transaction-button {
     width: 200px;
   }
- 
 }
 
-@media (max-width: 720px){
+@media (max-width: 720px) {
   .account-container {
     flex-direction: column;
     text-align: center;
   }
-  .account-amount{
+  .account-amount {
     font-size: 2rem;
   }
 }

@@ -9,7 +9,7 @@
   font-size: 5rem;
 }
 
-.login-content h1{
+.login-content h1 {
   margin-bottom: 1rem;
 }
 
@@ -18,7 +18,6 @@
   flex-direction: column;
   text-align: left;
   margin-bottom: 1rem;
-  
 }
 
 .input-login-wrapper label {
@@ -31,13 +30,13 @@
   border: 1.5px solid rgb(176, 172, 172);
   width: 100%;
   font-size: 14px;
-    line-height: 20px;
-    height: 48px;
-    border: 1.8px solid #adadad;
-    border-radius: 8px;
-    padding: 0 0 16px;
-    font-weight: 300;
-    padding: 12px;
+  line-height: 20px;
+  height: 48px;
+  border: 1.8px solid #adadad;
+  border-radius: 8px;
+  padding: 0 0 16px;
+  font-weight: 300;
+  padding: 12px;
 }
 
 .remember-wrapper {
@@ -61,16 +60,16 @@
   left: -9999px;
 }
 
-.signup-link{
+.signup-link {
   margin: 1rem;
 }
 
-.signup-link a{
+.signup-link a {
   text-decoration: none;
   color: #2c3e50;
 }
 
-.signup-link a:hover{
+.signup-link a:hover {
   border-bottom: 1px solid #2c3e50;
 }
 

@@ -1,8 +1,8 @@
-swagger: '2.0'
+swagger: "2.0"
 info:
   description: Swagger - Phase 2 - Transaction
   version: 1.0.0
-  title: 'ArgentBank : API documentation for transaction'
+  title: "ArgentBank : API documentation for transaction"
   termsOfService: http://swagger.io/terms/
 host: localhost:3001
 basePath: /api/v1
@@ -38,13 +38,13 @@ paths:
           type: string
           description: current month
       responses:
-        '200':
+        "200":
           description: Successfully get user's all transactions for the current month
           schema:
-            $ref: '#/definitions/Transaction'
-        '400':
+            $ref: "#/definitions/Transaction"
+        "400":
           description: Invalid Fields
-        '500':
+        "500":
           description: Internal Server Error
   /transaction/create/{userId}:
     post:
@@ -68,18 +68,18 @@ paths:
           description: a specific user's id
         - in: body
           name: body
-          description: Created transaction object 
+          description: Created transaction object
           required: true
           schema:
-               $ref: '#/definitions/Transaction'
+            $ref: "#/definitions/Transaction"
       responses:
-        '200':
+        "200":
           description: Successfully created a transaction!
           schema:
-            $ref: '#/definitions/Transaction'
-        '400':
+            $ref: "#/definitions/Transaction"
+        "400":
           description: Invalid Fields
-        '500':
+        "500":
           description: Internal Server Error
   /transaction/operation/{userId}/{transactionId}:
     get:
@@ -107,13 +107,13 @@ paths:
           type: integer
           description: Transaction unique id
       responses:
-        '200':
+        "200":
           description: Successfully get an user's specific transaction!
           schema:
-            $ref: '#/definitions/Transaction'
-        '400':
+            $ref: "#/definitions/Transaction"
+        "400":
           description: Invalid Fields
-        '500':
+        "500":
           description: Internal Server Error
     put:
       security:
@@ -141,18 +141,18 @@ paths:
           description: Transaction unique id
         - in: body
           name: body
-          description: Updated transaction object 
+          description: Updated transaction object
           required: true
           schema:
-               $ref: '#/definitions/Transaction'
+            $ref: "#/definitions/Transaction"
       responses:
-        '200':
+        "200":
           description: Successfully updated an user's specific transaction!
           schema:
-            $ref: '#/definitions/Transaction'
-        '400':
+            $ref: "#/definitions/Transaction"
+        "400":
           description: Invalid Fields
-        '500':
+        "500":
           description: Internal Server Error
     delete:
       security:
@@ -179,13 +179,13 @@ paths:
           type: integer
           description: Transaction unique id
       responses:
-        '200':
+        "200":
           description: Successfully delete an existent transaction!
           schema:
-            $ref: '#/definitions/Transaction'
-        '400':
+            $ref: "#/definitions/Transaction"
+        "400":
           description: Invalid Fields
-        '500':
+        "500":
           description: Internal Server Error
 securityDefinitions:
   Bearer:

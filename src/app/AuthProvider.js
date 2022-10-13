@@ -14,7 +14,6 @@ export const AuthProvider = ({ children }) => {
 
 export default AuthContext;
 
-
 // uses createContext and exports a Provider wrapper
 // un fichier qui utilise createContext et exporte un wrapper Provider
 

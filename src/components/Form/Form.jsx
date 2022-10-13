@@ -18,7 +18,6 @@ const Form = () => {
   const [password, setPassword] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [, setSuccess] = useState(false);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -66,6 +65,7 @@ const Form = () => {
       }
     }
   };
+
   console.log(email, password);
 
   return (
@@ -86,7 +86,6 @@ const Form = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)} //as user change input, we get the value and put them into setEmail
           />
-          
         </div>
         <div className="input-login-wrapper">
           <TextInput
