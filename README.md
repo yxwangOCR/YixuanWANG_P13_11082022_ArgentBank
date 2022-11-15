@@ -29,7 +29,7 @@ Build a web application for customers of Argent Bank to log in as well as manage
 
 - Clone the Backend on your computer:
 
-```http
+```
   git clone https://github.com/yxwangOCR/Project-13-ArgentBank-API
 ```
 
@@ -39,7 +39,7 @@ Build a web application for customers of Argent Bank to log in as well as manage
 
 - Clone the Frontend App on your computer:
 
-```http
+```
   git clone https://github.com/yxwangOCR/YixuanWANG_P13_11082022_ArgentBank.git
 ```
 
